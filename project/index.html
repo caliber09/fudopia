@@ -1,0 +1,104 @@
+<html>
+<head>
+    <title>FUDOPIA - World Food Hub</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Notable&family=Coming+Soon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <a class="logo-link" href="#home" onclick="showSection('home'); return false;">
+                <img class="logo-icon" src="logo.png" alt="Fudopia logo">
+                <div class="logo-text">
+                    <span class="logo-main">Fudopia</span>
+                    <span class="logo-subtitle">World Food Encyclopedia</span>
+                </div>
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="#home" data-target="home" onclick="showSection('home'); return false;">Home</a>
+            <a href="#foods" data-target="foods" onclick="showSection('foods'); return false;">World Foods</a>
+            <a href="#fun-facts" data-target="fun-facts" onclick="showSection('fun-facts'); return false;">Fun Facts</a>
+            <a href="#about-us" data-target="about-us" onclick="showSection('about-us'); return false;">About Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-heading">
+                <h1>Welcome to FUDOPIA</h1>
+            </div>
+            <h3>Travel the Globe Through Food</h3>
+            <p>Your gateway to the world's food knowledge. Explore the stories, origins, and flavors that make every cuisine unique. find out why they steal hearts globally.</p>
+
+            <div class="hero-buttons">
+                <a href="#foods" class="btn-primary" data-target="foods" onclick="showSection('foods'); return false;">Explore Dishes</a>
+                <a href="#fun-facts" class="btn-secondary" data-target="fun-facts" onclick="showSection('fun-facts'); return false;">Fun Facts</a>
+            </div>
+
+            <div class="hero-stats">
+                <div>
+                    <h3>10+</h3>
+                    <p>Countries featured</p>
+                </div>
+                <div>
+                    <h3>50+</h3>
+                    <p>Iconic dishes</p>
+                </div>
+                <div>
+                    <h3 id="foodAdventureCount">1</h3>
+                    <p>Food Adventurer</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- World Foods Section -->
+    <section id="foods" class="featured-countries section-hidden">
+        <div class="container section-with-border">
+            <h2 class="section-title">Global Cuisines</h2>
+            <div class="country-filter" id="countryFilter"></div>
+            <div class="food-grid" id="foodGrid"></div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section id="fun-facts" class="section-hidden">
+        <div class="container section-with-border alt-border">
+            <h2 class="section-title" style="color:white">Did You Know?</h2>
+            <div class="fact-box">
+                <p id="factDisplay" class="fact-content">Loading a tasty fact...</p>
+                <button class="new-fact-btn" onclick="generateFact()">Tell Me Another!</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about-us" class="about-section section-hidden">
+        <div class="about-container">
+            <h2 class="about-title">About Us</h2>
+            <div class="about-text coming-soon-regular">
+                <p>FUDOPIA is a global food discovery hub built for curious eaters, travelers, and culture lovers. We bring together iconic dishes from around the world and explain what makes each flavor famous.</p>
+                <p>Our mission is to celebrate food stories, share authentic regional favorites, and inspire you to taste new cuisines. Every dish is chosen for its cultural meaning, popularity, and ability to connect people through food.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 FUDOPIA. All rights reserved. Taste the World.</p>
+        <p>Created by Harsh Rao. Follow us on <a class="footer-link" href="https://www.instagram.com/ca.li.ber_/" target="_blank" rel="noopener noreferrer">📷 Instagram</a>.</p>
+    </footer>
+
+    <!-- External Scripts -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
