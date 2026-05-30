@@ -20,6 +20,28 @@ body {
     line-height: 1.6;
 }
 
+/* Layout system: keeps footer attached and avoids fixed-height whitespace */
+:root {
+    --page-padding: clamp(14px, 4vw, 28px);
+    --section-gap: clamp(28px, 6vw, 70px);
+    --container-pad-x: clamp(16px, 4vw, 24px);
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+
 /* --- NAVIGATION --- */
 nav {
     background: var(--card-bg);
@@ -323,8 +345,9 @@ nav {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px 50px;
+    padding: 0 var(--container-pad-x) var(--section-gap);
 }
+
 
 /* --- COUNTRY TABS --- */
 .country-filter {
@@ -456,10 +479,15 @@ nav {
 
 .about-section {
     background: #f5f5f5;
-    padding: 110px 20px;
+    padding: clamp(56px, 8vw, 110px) var(--container-pad-x);
     text-align: center;
-    min-height: 520px;
+    min-height: 0; /* remove fixed whitespace on mobile */
 }
+
+.about-container {
+    width: min(900px, 100%);
+}
+
 
 .about-container {
     max-width: 900px;
@@ -493,9 +521,17 @@ footer {
     background: #1e272e;
     color: #888;
     text-align: center;
-    padding: 20px;
-    margin-top: auto;
+    padding: 18px var(--container-pad-x);
+    margin-top: auto; /* attached to content because body is flex column */
+    width: 100%;
 }
+
+footer p {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .footer-link {
     color: var(--accent);
@@ -507,14 +543,17 @@ footer {
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
+    .hero h1 { font-size: clamp(2.2rem, 7vw, 3rem); }
     .nav-links { display: none; }
     .logo { font-size: 1.5rem; }
-    .about-title { font-size: 55px; }
-    .about-text { font-size: 22px; }
+    .about-title { font-size: clamp(2.2rem, 10vw, 3.4rem); }
+    .about-text { font-size: clamp(1rem, 4.5vw, 1.25rem); }
+    .hero-buttons { flex-direction: column; }
+    .fact-content { font-size: clamp(1.1rem, 4.6vw, 1.6rem); }
+    .fact-box { padding: 20px; }
 }
 
 @media (max-width: 480px) {
-    .about-title { font-size: 40px; }
-    .about-text { font-size: 18px; }
+    .about-title { font-size: clamp(2rem, 11vw, 2.6rem); }
 }
+
