@@ -19,7 +19,3 @@ It includes country filters, food cards, fun facts, and a local browser-based ad
 - `data.js` — food dataset and fun facts
 - `logo.png`, `jcr.png` — image assets
 
-## Run locally
-
-Open `index.html` in your browser to view the site.
-
